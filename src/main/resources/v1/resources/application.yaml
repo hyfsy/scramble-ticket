@@ -1,0 +1,5 @@
+server:
+  port: 2834
+spring:
+  application:
+    name: demo-service

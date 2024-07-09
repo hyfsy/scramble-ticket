@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script src="file://C:\Users\user\Desktop\passport\suite.js"/>-->
+
+<script>
+    var suiteJs = window.location.href.replace("aaa.html", "suite_4.js");
+    var script = document.createElement('script');
+    script.src = suiteJs;
+    document.body.appendChild(script);
+    // console.log(window.json_ua.toString());
+    console.log(window['json_ua'].toString());
+</script>
+</body>
+</html>

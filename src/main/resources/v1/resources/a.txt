@@ -1,0 +1,38 @@
+POST https://kyfw.12306.cn/otn/confirmPassenger/getQueueCount HTTP/1.1
+Host: kyfw.12306.cn
+Connection: keep-alive
+Content-Length: 380
+Pragma: no-cache
+Cache-Control: no-cache
+sec-ch-ua: "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+sec-ch-ua-mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+sec-ch-ua-platform: "Windows"
+Origin: https://kyfw.12306.cn
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://kyfw.12306.cn/otn/confirmPassenger/initDc
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: JSESSIONID=69FACD7808E2EE6B327D39C6807C785F; tk=BDqpghaczy-V1RTx58h9vsPW_PzK8BTPqrh1h0; guidesStatus=off; _jc_save_fromStation=%u4E0A%u6D77%2CSHH; _jc_save_toStation=%u5E38%u5DDE%2CCZH; _jc_save_wfdc_flag=dc; route=c5c62a339e7744272a54643b3be5bf64; BIGipServerotn=1608057098.64545.0000; highContrastMode=defaltMode; cursorStatus=off; BIGipServerpassport=971505930.50215.0000; _jc_save_fromDate=2024-05-21; _jc_save_toDate=2024-05-08; uKey=5336a126d7a71a9c9f2f7c7c09cde23d79a1a5fd1929556d2931bf70576be222
+
+train_date=Tue+May+21+2024+00%3A00%3A00+GMT%2B0800+(%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4)&train_no=5l000G197090&stationTrainCode=G1970&seatType=O&fromStationTelecode=AOH&toStationTelecode=ESH&leftTicket=JlVVJAItR%252FDGMsj0h9%252BmEWX%252FTqWhCO83jgqDCoy5VKP7VhRb&purpose_codes=00&train_location=H2&_json_att=&REPEAT_SUBMIT_TOKEN=45c587791c837807ec13b9385cf8272d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
