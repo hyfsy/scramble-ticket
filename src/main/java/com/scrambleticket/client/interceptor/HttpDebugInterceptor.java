@@ -2,7 +2,6 @@
 package com.scrambleticket.client.interceptor;
 
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
@@ -10,7 +9,7 @@ import com.scrambleticket.Logger;
 import com.scrambleticket.client.CallbackWrapper;
 import com.scrambleticket.client.Client;
 import com.scrambleticket.client.Interceptors;
-import com.scrambleticket.flow.FlowContext;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.ByteBufUtil;
 
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -19,69 +18,60 @@ import io.netty.util.internal.StringUtil;
 
 public class HttpDebugInterceptor extends Interceptors.ForwardingCallbackInterceptor {
 
-    FlowContext context;
-
-    public HttpDebugInterceptor(FlowContext context) {
-        this.context = context;
-        // context.getFuture().whenComplete(new BiConsumer<FlowContext, Throwable>() {
-        // @Override
-        // public void accept(FlowContext context, Throwable throwable) {
-        // DebugInfo instance = DebugInfo.getInstance(context);
-        // instance.print();
-        // instance.release();
-        // DebugInfo.removeInstance(context);
-        // }
-        // });
-    }
+    private static final DebugInfo debugInfo = new DebugInfo();
 
     @Override
     public FullHttpResponse syncCall(Client client, Integer connectionId, FullHttpRequest request, long timeoutMillis,
         Interceptors.Call next) {
-        String id = UUID.randomUUID().toString();
-        DebugInfo.getInstance(context).putRequest(id, request);
+        long id = System.currentTimeMillis();
+        if (Switch.log_req_resp) {
+            debugInfo.putRequest(id, request);
+        }
         FullHttpResponse response = super.syncCall(client, connectionId, request, timeoutMillis, next);
-        DebugInfo.getInstance(context).putResponse(id, response);
+        if (Switch.log_req_resp) {
+            debugInfo.putResponse(id, response);
+        }
         return response;
     }
 
     @Override
     public void asyncCall(Client client, Integer connectionId, FullHttpRequest request, Client.Callback callback,
         Interceptors.AsyncCall next) {
-        String id = UUID.randomUUID().toString();
-        DebugInfo.getInstance(context).putRequest(id, request);
+        long id = System.currentTimeMillis();
+        if (Switch.log_req_resp) {
+            debugInfo.putRequest(id, request);
+        }
         super.asyncCall(client, connectionId, request, new CallbackWrapper(callback) {
             @Override
             public void onSuccess(FullHttpResponse response) {
-                DebugInfo.getInstance(context).putResponse(id, response);
+                if (Switch.log_req_resp) {
+                    debugInfo.putResponse(id, response);
+                }
                 super.onSuccess(response);
             }
         }, next);
     }
 
-    public static class DebugInfo {
-
-        Map<String, Pair> messages = new ConcurrentSkipListMap<>();
-
-        public static DebugInfo getInstance(FlowContext context) {
-            DebugInfo debugInfo = context.getAttribute(DebugInfo.class.getName(), DebugInfo.class);
-            if (debugInfo == null) {
-                debugInfo = new DebugInfo();
-                context.putAttribute(DebugInfo.class.getName(), debugInfo);
-            }
-            return debugInfo;
+    @Override
+    public void closeCall(Client client, Interceptors.CloseCall next) {
+        if (Switch.log_req_resp) {
+            debugInfo.print();
+            debugInfo.release();
         }
+        super.closeCall(client, next);
+    }
 
-        public static void removeInstance(FlowContext context) {
-            context.removeAttribute(DebugInfo.class.getName(), DebugInfo.class);
-        }
+    private static class DebugInfo {
 
-        public void putRequest(String id, FullHttpRequest request) {
+        Map<Long, Pair> messages = new ConcurrentSkipListMap<>();
+
+        public void putRequest(long id, FullHttpRequest request) {
             messages.putIfAbsent(id, new Pair());
             request.retain();
             messages.get(id).request = request;
         }
 
-        public void putResponse(String id, FullHttpResponse response) {
+        public void putResponse(long id, FullHttpResponse response) {
             messages.putIfAbsent(id, new Pair());
             response.retain();
             messages.get(id).response = response;

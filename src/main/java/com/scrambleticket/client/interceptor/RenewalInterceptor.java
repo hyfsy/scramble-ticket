@@ -11,8 +11,8 @@ import com.scrambleticket.client.Client;
 import com.scrambleticket.client.Interceptors;
 import com.scrambleticket.client.cookie._embedded_cookie;
 import com.scrambleticket.flow.FlowContext;
-import com.scrambleticket.handler.UserLoginHandler;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.handler.login.UserLoginHandler;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.StringUtil;
 
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -35,7 +35,7 @@ public class RenewalInterceptor extends Interceptors.ForwardingCallbackIntercept
     private final UserLoginHandler userLoginHandler = new UserLoginHandler();
 
     private void renewal() {
-        scheduledExecutorService = new ScheduledThreadPoolExecutor(1, new DefaultThreadFactory("heartbeat"));
+        scheduledExecutorService = new ScheduledThreadPoolExecutor(1, new DefaultThreadFactory("renewal", true));
         scheduledExecutorService.scheduleWithFixedDelay(this::renew, HEARTBEAT_INTERVAL, HEARTBEAT_INTERVAL,
             TimeUnit.MILLISECONDS);
 

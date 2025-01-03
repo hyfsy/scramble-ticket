@@ -10,8 +10,8 @@ import com.scrambleticket.Logger;
 import com.scrambleticket.client.Client;
 import com.scrambleticket.client.cookie._embedded_cookie;
 import com.scrambleticket.flow.FlowContext;
-import com.scrambleticket.handler.UserLoginHandler;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.handler.login.UserLoginHandler;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.StringUtil;
 
 import io.netty.handler.codec.http.FullHttpRequest;

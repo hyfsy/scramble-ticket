@@ -1,7 +1,7 @@
 
 package com.scrambleticket;
 
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 
 public class Logger {
 

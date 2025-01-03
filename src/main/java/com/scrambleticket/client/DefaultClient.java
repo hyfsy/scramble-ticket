@@ -17,7 +17,7 @@ import com.scrambleticket.exception.ScrambleTicketClientException;
 import com.scrambleticket.exception.ScrambleTicketException;
 import com.scrambleticket.performance.Cost;
 import com.scrambleticket.performance.Record;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.StringUtil;
 
 import io.netty.bootstrap.Bootstrap;

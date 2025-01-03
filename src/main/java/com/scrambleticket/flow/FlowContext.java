@@ -4,6 +4,7 @@ package com.scrambleticket.flow;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
 
 import com.scrambleticket.client.Client;
 import com.scrambleticket.client.cookie.CookieStorage;
@@ -40,13 +41,19 @@ public class FlowContext {
     }
 
     public void done() {
-        future.complete(this);
+        if (!future.isDone()) {
+            future.complete(this);
+        }
     }
 
     public void error(Throwable t) {
-        if (future != null && !future.isDone()) {
+        if (!future.isDone()) {
             future.completeExceptionally(t);
         }
+    }
+
+    public void then(Function<CompletableFuture<FlowContext>, CompletableFuture<FlowContext>> then) {
+        future = then.apply(future);
     }
 
     public FlowContext copyFrom() {

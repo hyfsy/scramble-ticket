@@ -10,7 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.scrambleticket.client.Callback;
 import com.scrambleticket.exception.ScrambleTicketException;
 import com.scrambleticket.flow.FlowContext;
-import com.scrambleticket.handler.CheckQrHandler;
 
 public class QrCodeTimer {
 
@@ -52,7 +51,7 @@ public class QrCodeTimer {
 
         @Override
         public void run() {
-            if (popup_s.get() == 2 || popup_s.get() == 3) {
+            if (isFinished()) {
                 future.cancel(true);
                 return;
             }
@@ -96,9 +95,15 @@ public class QrCodeTimer {
 
                 @Override
                 public void onComplete(CheckQrResponse response, Throwable t) {
-                    callback.onComplete(response == null ? null : qrCodeResponse, t == null ? null : throwable);
+                    if (isFinished()) {
+                        callback.onComplete(response == null ? null : qrCodeResponse, t == null ? null : throwable);
+                    }
                 }
             });
+        }
+
+        private boolean isFinished() {
+            return popup_s.get() == 2 || popup_s.get() == 3;
         }
     }
 }

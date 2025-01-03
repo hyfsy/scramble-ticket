@@ -5,7 +5,7 @@ import com.scrambleticket.Logger;
 import com.scrambleticket.client.CallbackWrapper;
 import com.scrambleticket.client.Interceptors;
 import com.scrambleticket.client.Client;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;

@@ -1,8 +1,6 @@
 
 package com.scrambleticket;
 
-import com.scrambleticket.test.Task;
-
 import java.util.Map;
 
 public class Config {

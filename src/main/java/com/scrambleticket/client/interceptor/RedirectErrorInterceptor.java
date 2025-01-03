@@ -19,7 +19,7 @@ public class RedirectErrorInterceptor extends Interceptors.ForwardingCallbackInt
         return new CallbackWrapper(callback) {
             @Override
             public void onSuccess(FullHttpResponse response) {
-                if (response.status() == HttpResponseStatus.FOUND) {
+                if (response.status().code() == HttpResponseStatus.FOUND.code()) {
                     String location = response.headers().get(HttpHeaderNames.LOCATION);
                     if (location.endsWith("error.html")) {
                         throw new ScrambleTicketException("response 302 error: " + response);

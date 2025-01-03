@@ -1,0 +1,23 @@
+{
+  "activeTime": "2025-01-03 17:00:00",
+  "fromStation": "上海",
+  "toStation": "常州",
+  "departureTime": "2025-01-03",
+  "trainCodes": ["G7030"],
+  "passengers": [{
+    "key": "7ba4bd810848fdc1e3d6aa1c7x9f53463ce03acc40d888e5ee785436889217e1",
+    "ticketType": "1",
+    "seatType": "O"
+  }],
+  "candidate": {
+    "candidatePlans": [{
+      "trainCode": "G7064",
+      "seatType": "O"
+    }],
+    "cashingCutoffMinuteBefore": 120,
+    "acceptNewTrain":  true,
+    "newTrainTimeStart": "19",
+    "newTrainTimeEnd":  "20",
+    "acceptStand": true
+  }
+}

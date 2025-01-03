@@ -17,19 +17,20 @@ import com.scrambleticket.handler.qrcode.QrCodeRequest;
 import com.scrambleticket.handler.qrcode.QrCodeResponse;
 import com.scrambleticket.handler.qrcode.QrCodeTimer;
 import com.scrambleticket.model.LoginUser;
+import com.scrambleticket.config.SystemConfig;
 
 public class MockInteractionService implements InteractionService {
 
-    public static final String USERNAME = "hyfsya";
-    public static final String PASSWORD = "h13971864253";
-    public static final String ID_CARD_NUMBER = "4815";
-    public static final String QR_FILE_PATH = "C:\\Users\\user\\Desktop\\qrcode_12306.jpg";
+    private final String username = SystemConfig.getStr("username");
+    private final String password = SystemConfig.getStr("password");
+    private final String idCardNumber = SystemConfig.getStr("idCardNumber");
+    private final String qrFilePath = SystemConfig.getStr("qrFilePath");
 
-    LoginUser loginUser = new LoginUser();
+    private final LoginUser loginUser = new LoginUser();
     {
-        loginUser.setUsername(USERNAME);
-        loginUser.setPassword(PASSWORD);
-        loginUser.setIdCardNumber(ID_CARD_NUMBER);
+        loginUser.setUsername(username);
+        loginUser.setPassword(password);
+        loginUser.setIdCardNumber(idCardNumber);
     }
 
     UserSessionService userSessionService;
@@ -80,7 +81,7 @@ public class MockInteractionService implements InteractionService {
 
         Throwable t = null;
         try {
-            Files.write(Paths.get(QR_FILE_PATH), bytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+            Files.write(Paths.get(qrFilePath), bytes, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         } catch (IOException e) {
             t = e;
             callback.onError(new ScrambleTicketException("二维码下载失败", e));
@@ -96,6 +97,26 @@ public class MockInteractionService implements InteractionService {
 
         // TODO 刷新二维码的功能
         QrCodeTimer qrCodeTimer = new QrCodeTimer();
-        qrCodeTimer.asyncForConfirm(context, request, callback);
+        qrCodeTimer.asyncForConfirm(context, request, new Callback<QrCodeResponse>() {
+            @Override
+            public void onSuccess(QrCodeResponse response) {
+                callback.onSuccess(response);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+                callback.onError(t);
+            }
+
+            @Override
+            public void onComplete(QrCodeResponse response, Throwable t) {
+                try {
+                    Files.delete(Paths.get(qrFilePath));
+                } catch (IOException e) {
+                    Logger.error("delete qrcode file failed", e);
+                }
+                callback.onComplete(response, t);
+            }
+        });
     }
 }

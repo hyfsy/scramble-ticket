@@ -15,4 +15,13 @@ public enum TicketType {
 
     final String code;
     final String name;
+
+    public static TicketType getByCode(String code) {
+        for (TicketType ticketType : values()) {
+            if (ticketType.code.equals(code)) {
+                return ticketType;
+            }
+        }
+        throw new IllegalArgumentException("unknown code: " + code);
+    }
 }

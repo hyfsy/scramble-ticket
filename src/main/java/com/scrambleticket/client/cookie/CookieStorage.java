@@ -56,6 +56,10 @@ public class CookieStorage {
         return this;
     }
 
+    public String getCookie(_embedded_cookie.Cookie cookie) {
+        return getCookie(cookie.getPath(), cookie.getKey());
+    }
+
     public String getCookie(String path, String key) {
         return getCookies(path).get(key);
     }

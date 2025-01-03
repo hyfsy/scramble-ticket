@@ -4,7 +4,7 @@ package com.scrambleticket.client.interceptor;
 import com.scrambleticket.client.CallbackWrapper;
 import com.scrambleticket.client.Interceptors;
 import com.scrambleticket.client.Client;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.ByteBufUtil;
 
 import io.netty.handler.codec.http.FullHttpRequest;

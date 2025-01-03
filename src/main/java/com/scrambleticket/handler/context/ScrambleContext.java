@@ -83,7 +83,7 @@ public class ScrambleContext {
         init_oldPassengerStr();
     }
 
-    public void init_passengerTicketStr() {
+    private void init_passengerTicketStr() {
         if (StringUtil.isNotBlank(passengerTicketStr)) {
             return;
         }
@@ -103,7 +103,7 @@ public class ScrambleContext {
         this.passengerTicketStr = UrlUtil.encode(passengerTicketStr.toString());
     }
 
-    public void init_oldPassengerStr() {
+    private void init_oldPassengerStr() {
         if (StringUtil.isNotBlank(passengerTicketStr)) {
             return;
         }

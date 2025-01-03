@@ -23,7 +23,7 @@ public class DefaultConfigService implements ConfigService {
 
     static final int VERSION = 1;
     File configFile =
-        new File(String.join(File.separator, System.getProperty("user.home"), ".scramble-ticket", "config.json"));
+        new File(String.join(File.separator, System.getProperty("user.home"), ".scramble-ticket", "static/config/config_test.json"));
     volatile String cache;
     volatile AtomicLong revision = new AtomicLong(-1L);
     Lock lock = new ReentrantLock();

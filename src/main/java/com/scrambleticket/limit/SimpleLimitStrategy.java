@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.scrambleticket.Logger;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 
 import io.netty.handler.codec.http.FullHttpRequest;
 

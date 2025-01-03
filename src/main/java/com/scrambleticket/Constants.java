@@ -12,9 +12,6 @@ public interface Constants {
     String popup_passport_appId = "otn";
     String popup_qr_appId = "otn";
 
-    String key_uamtk = "uamtk";
-    String key_tk = "tk";
-
     default String getPurposeCodes() {
         boolean isStudent = false;
         String login_isDisable = "N";

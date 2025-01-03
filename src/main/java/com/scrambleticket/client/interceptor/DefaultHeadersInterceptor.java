@@ -3,7 +3,7 @@ package com.scrambleticket.client.interceptor;
 
 import com.scrambleticket.client.Client;
 import com.scrambleticket.client.Interceptors;
-import com.scrambleticket.test.Switch;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.HttpUtils;
 import com.scrambleticket.util.UrlUtil;
 

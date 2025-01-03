@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import com.scrambleticket.handler.OrderQueueWaitTimer;
+import com.scrambleticket.handler.scramble.common.OrderQueueWaitTimer;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;

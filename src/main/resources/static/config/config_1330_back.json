@@ -1,0 +1,20 @@
+{
+  "activeTime": "today 13:30:00",
+  "fromStation": "上海",
+  "toStation": "常州",
+  "departureTime": "+15",
+  "trainCodes": ["G7588", "G7726"],
+  "passengers": [{
+    "key": "7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1"
+  }],
+  "candidate": {
+    "candidatePlans": [{
+      "trainCode": "G7064"
+    }],
+    "cashingCutoffMinuteBefore": 120,
+    "acceptNewTrain":  true,
+    "newTrainTimeStart": "19",
+    "newTrainTimeEnd":  "20",
+    "acceptStand": true
+  }
+}
