@@ -5,13 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.flow.FlowContext;
 import com.scrambleticket.flow.FlowHandler;
 import com.scrambleticket.handler.context.ScrambleContext;
 import com.scrambleticket.handler.context.TrainScrambleContext;
-import com.scrambleticket.handler.pay.PayCheckHandler;
-import com.scrambleticket.handler.pay.PayOrderInitHandler;
-import com.scrambleticket.config.Switch;
 
 public class ScrambleTicketDispatcher implements FlowHandler {
 
@@ -33,9 +31,9 @@ public class ScrambleTicketDispatcher implements FlowHandler {
         flowHandlers.add(new GetQueueCountHandler());
         if (Switch.commit_order_real) {
             flowHandlers.add(new ConfirmSingleForQueueHandler());
-            if (Switch.pay_flow_enabled) {
-                flowHandlers.add(new PayOrderInitHandler());
-                flowHandlers.add(new PayCheckHandler());
+            if (Switch.flow_type.isPay()) {
+                // flowHandlers.add(new PayOrderInitHandler());
+                // flowHandlers.add(new PayCheckHandler());
                 // flowHandlers.add(new PayGatewayHandler());
             }
         }

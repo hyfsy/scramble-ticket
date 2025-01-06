@@ -31,7 +31,7 @@ public class PassengersQueryHandler implements FlowHandler {
             return;
         }
 
-        ByteBuf body = ByteBufUtil.create("pageIndex=1&pageSize=10"); // TODO 这边乘客只取前面的10个，目前足够，咱不调整
+        ByteBuf body = ByteBufUtil.create("pageIndex=1&pageSize=10"); // TODO 这边乘客只取前面的10个，自己用足够，暂不调整
         FullHttpRequest request = HttpUtils.createPostRequest("https://kyfw.12306.cn/otn/passengers/query", body);
         HttpUtils.setFormUrlEncodedContentType(request);
 
@@ -47,8 +47,6 @@ public class PassengersQueryHandler implements FlowHandler {
                 Map data = (Map)json.get("data");
                 List<Map<String, String>> normal_passengers = (List<Map<String, String>>)data.get("datas");
 
-                // TODO key
-                // passenger_uuid 7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1
                 Map<String, Map<String, String>> normal_passengers_map = normal_passengers.stream().collect(
                     Collectors.toMap(p -> p.get("passenger_uuid"), Function.identity()));
 

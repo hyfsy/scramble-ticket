@@ -3,18 +3,52 @@
   "fromStation": "常州",
   "toStation": "上海",
   "departureTime": "+15",
-  "trainCodes": ["G7267"],
+  "trainCodes": ["G7279"],
   "passengers": [{
     "key": "7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1"
   }],
   "candidate": {
     "candidatePlans": [{
-      "trainCode": "G7064"
+      "trainCode": "G7263"
+    },{
+      "trainCode": "G7019"
+    },{
+      "trainCode": "G7063"
+    },{
+      "trainCode": "G7021"
+    },{
+      "trainCode": "G7267"
+    },{
+      "trainCode": "G7083"
+    },{
+      "trainCode": "G8257"
+    },{
+      "trainCode": "G7023"
+    },{
+      "trainCode": "G7235"
+    },{
+      "trainCode": "G8289"
+    },{
+      "trainCode": "D951"
+    },{
+      "trainCode": "G1467"
+    },{
+      "trainCode": "G8269"
+    },{
+      "trainCode": "G7025"
+    },{
+      "trainCode": "G3053"
+    },{
+      "trainCode": "D2905"
+    },{
+      "trainCode": "D3055"
+    },{
+      "trainCode": "G8261"
     }],
     "cashingCutoffMinuteBefore": 120,
     "acceptNewTrain":  true,
-    "newTrainTimeStart": "19",
-    "newTrainTimeEnd":  "20",
+    "newTrainTimeStart": "16",
+    "newTrainTimeEnd":  "21",
     "acceptStand": true
   }
 }

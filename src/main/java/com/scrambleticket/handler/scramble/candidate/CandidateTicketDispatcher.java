@@ -6,14 +6,14 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import com.scrambleticket.Logger;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.flow.FlowContext;
 import com.scrambleticket.flow.FlowHandler;
+import com.scrambleticket.handler.context.ScrambleContext;
+import com.scrambleticket.handler.context.TrainScrambleContext;
 import com.scrambleticket.handler.pay.PayCheckHandler;
 import com.scrambleticket.handler.pay.PayOrderInitHandler;
 import com.scrambleticket.handler.scramble.common.GetPassengerDTOsHandler;
-import com.scrambleticket.handler.context.ScrambleContext;
-import com.scrambleticket.handler.context.TrainScrambleContext;
-import com.scrambleticket.config.Switch;
 
 public class CandidateTicketDispatcher implements FlowHandler {
 
@@ -37,7 +37,7 @@ public class CandidateTicketDispatcher implements FlowHandler {
         if (Switch.candidate_commit_order_real) {
             flowHandlers.add(new ConfirmHBHandler());
             flowHandlers.add(new QueryQueueHandler());
-            if (Switch.pay_flow_enabled) {
+            if (Switch.flow_type.isPay()) {
                 flowHandlers.add(new PayOrderInitHandler());
                 flowHandlers.add(new PayCheckHandler());
                 // flowHandlers.add(new PayGatewayHandler());

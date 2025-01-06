@@ -102,8 +102,6 @@ public class GetPassengerDTOsHandler implements FlowHandler {
                     }
                 }
 
-                // TODO key
-                // passenger_uuid 7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1
                 Map<String, Map<String, String>> normal_passengers_map = normal_passengers.stream().collect(
                     Collectors.toMap(p -> p.get("passenger_uuid"), Function.identity()));
 

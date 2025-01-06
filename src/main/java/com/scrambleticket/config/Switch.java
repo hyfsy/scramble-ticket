@@ -1,6 +1,8 @@
 
 package com.scrambleticket.config;
 
+import com.scrambleticket.model.FlowType;
+
 public class Switch {
 
     public static final boolean login_by_password = SystemConfig.getBool("login_by_password");
@@ -32,8 +34,7 @@ public class Switch {
     // 总流程六个接口，压缩主要针对流程的最后三个接口，因为前三个接口有限流约束，慢点无所谓，而后三个接口数据很少，也不是很需要压缩
     public static final boolean compress_enabled = SystemConfig.getBool("compress_enabled");
 
-    public static final boolean candidate_enabled = SystemConfig.getBool("candidate_enabled");
     public static final boolean candidate_commit_order_real = SystemConfig.getBool("candidate_commit_order_real");
 
-    public static final boolean pay_flow_enabled = SystemConfig.getBool("pay_flow_enabled");
+    public static final FlowType flow_type = FlowType.getByCode(SystemConfig.getInt("flow_type"));
 }

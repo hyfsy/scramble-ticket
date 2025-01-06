@@ -1,0 +1,58 @@
+{
+  "activeTime": "today 14:30:00",
+  "fromStation": "上海",
+  "toStation": "常州",
+  "departureTime": "+15",
+  "trainCodes": ["G7002"],
+  "passengers": [{
+    "key": "7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1"
+  }],
+  "candidate": {
+    "candidatePlans": [{
+      "trainCode": "G2784"
+    },{
+      "trainCode": "G8262"
+    },{
+      "trainCode": "G1468"
+    },{
+      "trainCode": "G2616"
+    },{
+      "trainCode": "G7004"
+    },{
+      "trainCode": "G7268"
+    },{
+      "trainCode": "G7036"
+    },{
+      "trainCode": "G7232"
+    },{
+      "trainCode": "G8988"
+    },{
+      "trainCode": "G7084"
+    },{
+      "trainCode": "D2906"
+    },{
+      "trainCode": "G7006"
+    },{
+      "trainCode": "G8254"
+    },{
+      "trainCode": "D956"
+    },{
+      "trainCode": "G7008"
+    },{
+      "trainCode": "G7042"
+    },{
+      "trainCode": "G7060"
+    },{
+      "trainCode": "G8270"
+    },{
+      "trainCode": "G7240"
+    },{
+      "trainCode": "G7010"
+    }],
+    "cashingCutoffMinuteBefore": 120,
+    "acceptNewTrain":  true,
+    "newTrainTimeStart": "07",
+    "newTrainTimeEnd":  "11",
+    "acceptStand": true
+  }
+}

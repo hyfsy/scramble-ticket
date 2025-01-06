@@ -248,11 +248,11 @@ public class Run {
         // TODO 这边开始，接口都要判断用户登录情况
         pipeline.addHandler(new CheckUserHandler());
         // TODO limit start
-        if (Switch.candidate_enabled) {
-            pipeline.addHandler(new CandidateTicketDispatcher());
-        }
-        else {
+        if (Switch.flow_type.isCommon()) {
             pipeline.addHandler(new ScrambleTicketDispatcher());
+        }
+        else if (Switch.flow_type.isCandidate()) {
+            pipeline.addHandler(new CandidateTicketDispatcher());
         }
         // limit end
 
