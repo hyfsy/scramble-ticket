@@ -79,7 +79,6 @@ public class ConfirmSingleForQueueHandler implements FlowHandler {
                 if (!("1".equals(isAsync))) {
                     // otsRedirect("post", ctx + "payOrder/init?random=" + new Date().getTime(), {})
                     Logger.info("购票成功！");
-                    // TODO 支付
                     chain.handle(context);
                     return;
                 }
