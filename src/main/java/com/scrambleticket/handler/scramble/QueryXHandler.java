@@ -81,7 +81,11 @@ public class QueryXHandler implements FlowHandler {
                     String[] stationInfos = stationInfo.split("\\|");
 
                     Map<String, String> stationInfoMap = new HashMap<>();
-                    stationInfoMap.put("secretStr", stationInfos[0]);
+                    String secretStr = stationInfos[0];
+                    if (secretStr == null || secretStr.isEmpty()) { // |列车运行图调整,暂停发售|xxx
+                        continue;
+                    }
+                    stationInfoMap.put("secretStr", secretStr);
                     // "Y" == df[dn].queryLeftNewDTO.canWebBuy 14点30分起售 canWebBuy IS_TIME_NOT_BUY
                     stationInfoMap.put("buttonTextInfo", stationInfos[1]); // TODO 14点30分起售
                     stationInfoMap.put("train_no", stationInfos[2]); // 5l000D301002
