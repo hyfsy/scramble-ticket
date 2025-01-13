@@ -18,8 +18,6 @@
       "trainCode": "G7028"
     },{
       "trainCode": "G7064"
-    },{
-      "trainCode": "G7030"
     }],
     "cashingCutoffMinuteBefore": 120,
     "acceptNewTrain":  true,
