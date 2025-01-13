@@ -9,11 +9,11 @@
   }],
   "candidate": {
     "candidatePlans": [{
-      "trainCode": "G7726"
-    },{
       "trainCode": "G7550"
     },{
-      "trainCode": "G7726"
+      "trainCode": "G7588"
+    },{
+      "trainCode": "G7156"
     }],
     "cashingCutoffMinuteBefore": 120,
     "acceptNewTrain":  true,
