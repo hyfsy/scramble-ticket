@@ -30,7 +30,7 @@ public class GetPassengerDTOsHandler implements FlowHandler {
     @Override
     public void handle(FlowContext context, FlowHandlerChain chain) {
         TrainScrambleContext trainScrambleContext = TrainScrambleContext.get(context, chain);
-        ScrambleContext scrambleContext = trainScrambleContext.getScrambleContext();
+        ScrambleContext scrambleContext = ScrambleContext.get(context);
         if (CollectionUtil.isNotEmpty(scrambleContext.getNormal_passengers())) { // 加速
             check_passengers_and_tickets(trainScrambleContext);
             chain.handle(context);

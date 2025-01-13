@@ -9,6 +9,8 @@
   }],
   "candidate": {
     "candidatePlans": [{
+      "trainCode": "G7124"
+    },{
       "trainCode": "G7550"
     },{
       "trainCode": "G7588"

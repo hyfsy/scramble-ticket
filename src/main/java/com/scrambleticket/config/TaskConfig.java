@@ -60,13 +60,18 @@ public class TaskConfig {
         }
         setActiveTime(innerTimeReplace(activeTime));
 
-        if (StringUtil.isBlank(getDepartureTime())) {
+        String departureTime = getDepartureTime();
+        if (StringUtil.isBlank(departureTime)) {
             setDepartureTime(today());
         }
-        setDepartureTime(innerTimeReplace(activeTime));
+        setDepartureTime(innerTimeReplace(departureTime));
 
         if (StringUtil.isBlank(getFromStation()) || StringUtil.isBlank(getToStation())
-            || getTrainCodes() == null || getTrainCodes().isEmpty() || getPassengers() == null || getPassengers().isEmpty()) {
+             || getPassengers() == null || getPassengers().isEmpty()) {
+            throw new IllegalArgumentException("config error");
+        }
+        // 候补情况无需配置
+        if ((getTrainCodes() == null || getTrainCodes().isEmpty()) && (getCandidate().getCandidatePlans() == null || getCandidate().getCandidatePlans().isEmpty())) {
             throw new IllegalArgumentException("config error");
         }
         getPassengers().forEach(p -> {

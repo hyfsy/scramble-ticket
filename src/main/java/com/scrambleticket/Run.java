@@ -161,7 +161,7 @@ public class Run {
 
         TaskConfig.Candidate candidate = taskConfig.getCandidate();
         if (candidate != null) {
-            Map<String, SeatType> map = new HashMap<>();
+            Map<String, SeatType> map = new LinkedHashMap<>();
             for (TaskConfig.CandidatePlan candidatePlan : candidate.getCandidatePlans()) {
                 map.put(candidatePlan.getTrainCode(), SeatType.getByCode(candidatePlan.getSeatType()));
             }

@@ -2,7 +2,7 @@
 package com.scrambleticket.handler.context;
 
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +21,7 @@ public class CandidateContext {
     private ScrambleTask task;
 
     // trainCode -> SeatType
-    private Map<String, SeatType> candidatePlans = new HashMap<>();
+    private Map<String, SeatType> candidatePlans = new LinkedHashMap<>();
 
     // 兑现截止时间，前120分钟
     private int cashingCutoffMinuteBefore = cashingCutoffMinuteBeforeList.get(2);
@@ -47,7 +47,25 @@ public class CandidateContext {
         return context.removeAttribute(CANDIDATE_CONTEXT, CandidateContext.class);
     }
 
+    public void setCandidatePlans(Map<String, SeatType> candidatePlans) {
+        this.candidatePlans = candidatePlans;
+    }
+
     public void setTask(ScrambleTask task) {
         this.task = task;
+    }
+
+    public String getFirstPlanTrainCode() {
+        if (getCandidatePlans() == null || getCandidatePlans().isEmpty()) {
+            throw new IllegalStateException("candidate plans is empty");
+        }
+        return getCandidatePlans().keySet().iterator().next();
+    }
+
+    public void removeFirstPlanTrainCode() {
+        if (getCandidatePlans() == null || getCandidatePlans().isEmpty()) {
+            throw new IllegalStateException("candidate plans is empty");
+        }
+        getCandidatePlans().remove(getFirstPlanTrainCode());
     }
 }

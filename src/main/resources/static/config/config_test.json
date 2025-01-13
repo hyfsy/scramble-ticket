@@ -11,6 +11,9 @@
   }],
   "candidate": {
     "candidatePlans": [{
+      "trainCode": "G7030",
+      "seatType": "O"
+    },{
       "trainCode": "G7064",
       "seatType": "O"
     }],
