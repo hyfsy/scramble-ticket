@@ -9,10 +9,11 @@ import com.scrambleticket.Constants;
 import com.scrambleticket.Logger;
 import com.scrambleticket.client.Client;
 import com.scrambleticket.client.Interceptors;
+import com.scrambleticket.client.cookie.CookieStorage;
 import com.scrambleticket.client.cookie._embedded_cookie;
+import com.scrambleticket.config.Switch;
 import com.scrambleticket.flow.FlowContext;
 import com.scrambleticket.handler.login.UserLoginHandler;
-import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.StringUtil;
 
 import io.netty.handler.codec.http.FullHttpRequest;
@@ -21,10 +22,19 @@ import io.netty.util.concurrent.DefaultThreadFactory;
 
 public class RenewalInterceptor extends Interceptors.ForwardingCallbackInterceptor {
 
-    // TODO 多个不同的
     FlowContext context;
 
     public RenewalInterceptor(FlowContext context) {
+        this.context = context;
+        renewal();
+    }
+
+    // TODO
+    public RenewalInterceptor(Client client, CookieStorage cookieStorage) {
+        FlowContext context = new FlowContext();
+        context.setClient(client);
+        context.setConnectionId(999);
+        context.setCookieStorage(cookieStorage); // TODO 多个不同的
         this.context = context;
         renewal();
     }

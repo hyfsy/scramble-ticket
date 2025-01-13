@@ -28,9 +28,10 @@ public class PayCheckHandler implements FlowHandler {
                 JSONObject json = ByteBufUtil.toJSONObject(response.content());
 
                 // TODO
-                Boolean status = json.getBoolean("status");
-                if (status) {
+                // Boolean status = json.getBoolean("status");
+                // if (status) {
                     JSONObject data = json.getJSONObject("data");
+                    Object msg = data.get("msg");
                     Boolean flag = data.getBoolean("flag");
                     if (flag) {
                         JSONObject payForm = data.getJSONObject("payForm");
@@ -40,13 +41,17 @@ public class PayCheckHandler implements FlowHandler {
                         chain.handle(context);
                         return;
                     }
-                }
+                    else {
+                        throw new ScrambleTicketException("提示：" + msg);
+                    }
+                // }
 
-                throw new ScrambleTicketException("paycheck失败，响应值：" + json);
+                // throw new ScrambleTicketException("paycheck失败，响应值：" + json);
             }
 
             @Override
             public void onError(Throwable t) {
+                // 系统繁忙，请稍后重试！
                 context.error(new ScrambleTicketException("paycheck", t));
             }
 

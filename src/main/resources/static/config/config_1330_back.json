@@ -3,12 +3,16 @@
   "fromStation": "上海",
   "toStation": "常州",
   "departureTime": "+15",
-  "trainCodes": ["G7588"],
+  "trainCodes": ["G7124"],
   "passengers": [{
     "key": "7ba4bd810848fdc1e3d6aa1c79f53463ce03aacc40d888e5ee785436889217e1"
   }],
   "candidate": {
     "candidatePlans": [{
+      "trainCode": "G7726"
+    },{
+      "trainCode": "G7550"
+    },{
       "trainCode": "G7726"
     }],
     "cashingCutoffMinuteBefore": 120,

@@ -11,7 +11,6 @@ import com.scrambleticket.flow.FlowContext;
 import com.scrambleticket.flow.FlowHandler;
 import com.scrambleticket.handler.context.ScrambleContext;
 import com.scrambleticket.handler.context.TrainScrambleContext;
-import com.scrambleticket.handler.pay.PayCheckHandler;
 import com.scrambleticket.handler.pay.PayOrderInitHandler;
 import com.scrambleticket.handler.scramble.common.GetPassengerDTOsHandler;
 
@@ -39,7 +38,7 @@ public class CandidateTicketDispatcher implements FlowHandler {
             flowHandlers.add(new QueryQueueHandler());
             if (Switch.flow_type.isPay()) {
                 flowHandlers.add(new PayOrderInitHandler());
-                flowHandlers.add(new PayCheckHandler());
+                // flowHandlers.add(new PayCheckHandler());
                 // flowHandlers.add(new PayGatewayHandler());
             }
             flowHandlers.add(new FlowHandler() {

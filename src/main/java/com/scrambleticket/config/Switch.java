@@ -28,6 +28,7 @@ public class Switch {
     public static final boolean log_url_statistics = SystemConfig.getBool("log_url_statistics");
 
     public static final boolean log_req_resp = SystemConfig.getBool("log_req_resp");
+    public static final boolean log_req_resp_verbose = SystemConfig.getBool("log_req_resp_verbose");
 
     public static final int max_retry_time = SystemConfig.getInt("max_retry_time");
 

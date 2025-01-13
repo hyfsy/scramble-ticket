@@ -1,0 +1,115 @@
+function h() {
+        e.ajax({
+            url: /afterNatePay/payFinishInitApi,
+            async: !1,
+            type: "POST",
+            success: function(e) {
+                e.data && e.data.payFlag ? window.location.href = htmlHref.lineUpPaySuccess : (setLocalStorage("payflag", !1),
+                window.location.href = htmlHref.lineUpOrder)
+            },
+            error: function(e) {
+                window.DZP.confirm("", window.DZP.confirm.typeEnum.confirm, {
+                    title: "提示",
+                    msg: {
+                        tit: "系统繁忙，请稍后重试！"
+                    },
+                    btn: 1
+                })
+            }
+        })
+    }
+
+
+
+
+
+
+
+    HTTP/1.1 200 OK
+    Date: Tue, 07 Jan 2025 08:53:45 GMT
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 3140
+    Connection: keep-alive
+    Server: asfep/1.11.2.4
+    Set-Cookie: JSESSIONID=Zvw_-FFkaLiZqgXtGKeZE8GF7Kmt-B_O7701wzePPt0NAUI2daj7!1729836003; path=/; HttpOnly
+    X-Via: 1.1 PSshwt5wq39:16 (Cdn Cache Server V2.0)
+    x-ws-request-id: 677ceb99_PSshwt5fm38_9453-63400
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <title>中国铁路电子支付平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <style type="text/css">
+    <!--
+    body{ font-family:'宋体',Arial; font-size:12px; color:#333; text-align:center;}
+    a,a:link,a:visited {color:#0099FF; text-decoration:underline;}
+    .top{ margin:0 auto; width:100%; height:180px;}
+    .wait1{ margin:0 auto; width:800px; height:36px;}
+    .w1_1{float:left; width:50px; padding-left:300px;}
+    .w1_3{float:left; width:150px; padding-top:15px;}
+    .w1_8{ margin-top:10px; color:#A8A8A8;}
+    -->
+    </style>
+    </head>
+    <body>
+
+    <div class="top"></div>
+    <div class="wait1">
+      <div class="w1_1"><img src="pages/web/img/loading.gif" /></div>
+      <div class="w1_3">正在转向中，请稍候…</div>
+    </div>
+    <div class="wait1">
+      <div class="w1_8">如果系统长时间无响应，请<a href="javascript:document.getElementsByName('myform')[0].submit();">单击此处</a>提交本页面</div>
+    </div>
+
+
+     <form action="https://mapi.alipay.com/gateway.do" method="post" name="myform">
+
+         <input type="hidden"  name="req_client_ip_ext" value="112.65.27.114">
+
+         <input type="hidden"  name="ord_time_ext" value="2025-01-07 16:53:45">
+
+         <input type="hidden"  name="dispatch_cluster_target" value="mrmapi">
+
+         <input type="hidden"  name="sign_type" value="RSA">
+
+         <input type="hidden"  name="notify_url" value="https://epay.12306.cn/pay/payResponseC2?TRANS_ID=W20250107253939599&bankId=33000010">
+
+         <input type="hidden"  name="ord_pmt_timeout" value="2025-01-07 16:57:25">
+
+         <input type="hidden"  name="return_url" value="https://epay.12306.cn/pay/payResponseC2?TRANS_ID=W20250107253939599&bankId=33000010">
+
+         <input type="hidden"  name="sign" value="iDTXJL4SfjKBvHUtUQ4FAJrxgbgUx/SYX8UrGnwTvr+N1Ye+kOLMYKwxoOKO6a6o1iFdPTkrmoq4W53eIUbC/hiFq2h13CFY9AH2hQjwImti6XdnqxgJKS7POWLuSQBECKtMm+p8Si//5RdIPGwZNAEcIl4faQYMY/OQVdbxdtXdnlah2qbLhvkPXScm+hG8bZ+oNNmwrce10S9yK8caJwl0kBWCYACv5BA4tP9XPOLz1fkS9mLFaa+sW1MZgVdo18pbBI/udWdAycTqlJUFT108pRdgA2CS9kZoWgeKK2H5wUo4R1OUAkBmLmwtI8M7Vpq71OJD/NyeWF29GMK84Q==">
+
+         <input type="hidden"  name="ord_id_ext" value="W20250107253939599">
+
+         <input type="hidden"  name="_input_charset" value="UTF-8">
+
+         <input type="hidden"  name="req_access_type" value="web">
+
+         <input type="hidden"  name="ord_desc" value="">
+
+         <input type="hidden"  name="ord_cur" value="CNY">
+
+         <input type="hidden"  name="service" value="alipay.acquire.mr.ord.createandpay">
+
+         <input type="hidden"  name="ord_amt" value="100.00">
+
+         <input type="hidden"  name="partner" value="2088011519249952">
+
+         <input type="hidden"  name="ord_name" value="">
+
+     </form>
+
+
+    </body>
+    </html>
+
+    <script type="text/javascript">
+    document.getElementsByName("myform")[0].submit();
+    </script>

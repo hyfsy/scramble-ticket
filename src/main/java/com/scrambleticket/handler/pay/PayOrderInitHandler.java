@@ -1,6 +1,7 @@
 
 package com.scrambleticket.handler.pay;
 
+import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import com.scrambleticket.client.Client;
 import com.scrambleticket.exception.ScrambleTicketException;
@@ -25,19 +26,39 @@ public class PayOrderInitHandler implements FlowHandler {
             public void onSuccess(FullHttpResponse response) {
                 JSONObject json = ByteBufUtil.toJSONObject(response.content());
 
-                // TODO
-                Boolean status = json.getBoolean("status");
+                JSONObject data = json.getJSONObject("data");
 
-                if (status != null && status) {
-                    chain.handle(context);
-                    return;
+                if (data == null || data.getJSONObject("order") == null) {
+                    // window.location.href = htmlHref.lineUpOrder
+                    throw new ScrambleTicketException("data is null");
                 }
 
-                throw new ScrambleTicketException("payOrderInit失败，响应值：" + json);
+                JSONObject order = data.getJSONObject("order");
+                JSONArray needs = order.getJSONArray("needs");
+                int r = 0;
+                for (int i = 0; i < needs.size(); i++) {
+                    JSONObject need = needs.getJSONObject(i);
+                    String home_or_aboard = need.getString("home_or_aboard");
+                    if (home_or_aboard == null || !"1".equals(home_or_aboard) && !"2".equals(home_or_aboard)) {
+                        r++;
+                    }
+                }
+                if (r <= 0) {
+                    throw new ScrambleTicketException("r <= 0");
+                }
+
+                // Boolean status = json.getBoolean("status");
+                // if (status != null && status) {
+                    chain.handle(context);
+                //     return;
+                // }
+                // throw new ScrambleTicketException("payOrderInit失败，响应值：" + json);
             }
 
             @Override
             public void onError(Throwable t) {
+                // setLocalStorage("payflag", !1),
+                // window.location.href = htmlHref.lineUpOrder
                 context.error(new ScrambleTicketException("payOrderInit", t));
             }
 

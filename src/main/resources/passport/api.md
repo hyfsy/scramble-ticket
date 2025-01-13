@@ -1895,7 +1895,197 @@ X-Ws-Request-Id: 662610cd_qinzhoudianxin72_45806-42116
 
 
 
-<!DOCTYPE html 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>中国铁路电子支付平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="pages/web/css/bank.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://www.12306.cn/mormhweb/images/favicon.ico"/> 
+<link   rel="bookmark"   href="http://www.12306.cn/mormhweb/images/favicon.ico">
+<script type="text/javascript" src="https://kyfw.12306.cn/otn/resources/route/epay.12306.cn/route.js"></script>
+<script type="text/javascript">
+var issubmit=false;
+document.oncontextmenu=function(){return false;}
+function formsubmit(bankId,businessType){
+	//if(!issubmit){
+		issubmit=true;
+		document.getElementsByName("bankId")[0].value=bankId;
+		document.getElementsByName("businessType")[0].value=businessType;
+		document.getElementsByName("myform")[0].submit();
+	//}
+}
+
+</script>
+<style type="text/css">
+    .notice {
+        width: 910px;
+        min-height: 22px;
+        padding: 0 20px;
+        margin-top: 6px;
+        line-height: 22px;
+        background: #fffbe5;
+        border: 1px solid #fbd800;
+        color: #ff2626;
+        position: relative;
+        font-size: 12px;
+        font-family: Tahoma,"宋体";
+    }
+.notice_in {
+        margin-right: 20px;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    
+</style>
+</head>
+<body>
+ <div class="box1">
+   <iframe marginHeight="0" src="pages/web/mb.html" frameBorder="0" width="100%" scrolling="no" height="147"></iframe>
+</div>
+
+<div class="box1">
+
+  <div class="nav1">
+    <div class="nav3"><span class="nav3_1">&gt;&gt; 应付金额：</span><span class="nav3_5">100元</span></div>
+    <!--div class="nav5">请选择支付方式</div-->
+  </div>
+  <div class="nav1">
+    <div class="bank1">
+    
+<form action="/pay/webBusiness" method="post" name="myform">
+    <input type="hidden" value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8+CjxQYXlSZXE+PGludGVyZmFjZU5h
+bWU+UEFZX1NFUlZMRVQ8L2ludGVyZmFjZU5hbWU+PGludGVyZmFjZVZlcnNpb24+MS4wPC9pbnRl
+cmZhY2VWZXJzaW9uPjxvcmRlckRhdGU+MjAyNTAxMDcxNjUyNTk8L29yZGVyRGF0ZT48b3JkZXJU
+aW1lb3V0RGF0ZT4yMDI1MDEwNzE2NTcyNTwvb3JkZXJUaW1lb3V0RGF0ZT48b3JkZXJJZD4xRUgw
+NjA4MDg5NTA0MDA3MDYwMDExNjUyNTlZMDc8L29yZGVySWQ+PGFtb3VudD4xMDAwMDwvYW1vdW50
+PjxhcHBJZD4wMDAxPC9hcHBJZD48Y3VyVHlwZT4xNTY8L2N1clR5cGU+PG9yZGVyUmVtYXJrLz48
+bWVyVVJMPmh0dHBzOi8va3lmdy4xMjMwNi5jbi9vdG4vYWZ0ZXJOYXRlTm90aWZ5L2VwYXlTdGF0
+dXM/dXNlcl9uYW1lPWFIbG1jM2xoJmFtcDtzZXF1ZW5jZV9ubz1SVWd3TmpBNE1EZzVOVEEwTURB
+M01EWXcmYW1wO3BheU9yZGVySUQ9TVVWSU1EWXdPREE0T1RVd05EQXdOekEyTURBeE1UWTFNalU1
+V1RBMyZhbXA7cmVkaXJlY3RVUkw9YUhSMGNITTZMeTlyZVdaM0xqRXlNekEyTG1OdUwyOTBiaTh2
+YjNKa1pYSXZaVTV2ZEdsbWVVRmpkR2x2Ymk1a2J6OXRaWFJvYjJROQ0KY1hWbGNubE5lVTl5WkdW
+eVUzUmhkR2xqSm5ObGNYVmxibU5sWDI1dlBVVklNRFl3T0RBNE9UVXdOREF3TnpBMk1BPT0mYW1w
+O3BheVN0YXJ0PU1RPT0mYW1wO2JhdGNoX25vPU1RPT0mYW1wO2xvZ2luX2lkPVYwVkNYMXBJUTA0
+PSZhbXA7dG91cl9mbGFnPVNFST0mYW1wO3JldHVybl90b3RhbD0mYW1wO3JldHVybl9jb3N0PSZh
+bXA7b2xkX3RpY2tldF9wcmljZT0mYW1wO3BheV9tb2RlPSZhbXA7Y2hhbm5lbD1SUT09JmFtcDtp
+Zl9mbGFncz1UaU5PSXc9PTwvbWVyVVJMPjxhcHBVUkw+aHR0cHM6Ly8xMC4yLjI0MC4yMTI6NDQz
+L29wbi9hZnRlck5hdGVOb3RpZnkvZXBheU5vdGlmeTwvYXBwVVJMPjxpbm5lclVSTD5odHRwOi8v
+MTAuMi4yMDEuMTkzOjkwOTkvaG9yZGVyL3Byb2Nlc3NQYXlCYWNrPC9pbm5lclVSTD48bWVyVkFS
+PmFIbG1jM2xoT2xkRlFsOWFTRU5PT2tWSU1EWXdPREE0T1RVd05EQXdOekEyTURveE9qRTZNVGMz
+S2lvcUtqVXhOalk2T2pvNk9qbzYNCk9raENPa1U2TVRwT09rNDZNMk5OU0VwU1JsRkdPRUZYZEZa
+dWF6UXdkVFJQUmk5b1JWTlBNR1J0UkVReFMwMDJOVkF5YVVsQlQzTXgNClNteDFka0pqVFd4bVRt
+SjBkMmREWjFWbFkwdFRlRGhDZEhNNGNUTlJOZ3BDYUVGbVYwMWxkVkp6WWxOQmJXUndhRmN5ZUdo
+S2IzQjANCmExQXhURGxuUVVNcmFXTTZUZz09PC9tZXJWQVI+PHRyYW5zVHlwZT4wMTwvdHJhbnNU
+eXBlPjxwYXltZW50VHlwZT4xPC9wYXltZW50VHlwZT48UHJlQmFuaz4zMzAwMDAxMDwvUHJlQmFu
+az48L1BheVJlcT4=" name="tranData" />
+	<input type="hidden" value="01" name="transType" />
+	<input type="hidden" value="1" name="channelId" />
+	<input type="hidden" value="0001" name="appId" />	
+	<input type="hidden" value="bFJB/WDAvgPh5JV1DYI4da2kJ0iDqJl2X5qHqbgkRWFx8gq3rKsX/CKxXdy2rRwiobRiYm8aRLMd
+/hW4gDMh6Hsf5bAZ+ouRFD4+hMLpbsqTvfKMeL3Qj4NIgUFlch1xB8M8Ukc/marSOPu/6j2GvglB
+WXuXUGOFu01aeQeKCf0=" name="merSignMsg" />
+	<input type="hidden" value="112.65.27.114" name="merCustomIp" />		
+	<input type="hidden" value="20250107165725" name="orderTimeoutDate" />	
+	<input type="hidden" value="1" name="paymentType" />	
+	<input type="hidden" name="bankId" />	
+	<input type="hidden" name="businessType" />
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_gsyh2.gif" width="130" height="52" title="工商银行" onclick="javascript:formsubmit('01020000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_nyyh2.gif" width="130" height="52" title="农业银行" onclick="javascript:formsubmit('01030000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zgyh2.gif" width="130" height="52" title="中国银行" onclick="javascript:formsubmit('01040000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_jsyh2.gif" width="130" height="52" title="建设银行" onclick="javascript:formsubmit('01050000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zsyh2.gif" width="130" height="52" title="招商银行" onclick="javascript:formsubmit('03080000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_ycyh.gif" width="130" height="52" title="邮储银行" onclick="javascript:formsubmit('01009999','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zgyl.gif" width="130" height="52" title="中国银联" onclick="javascript:formsubmit('00011000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_ztytk.gif" width="130" height="52" title="中铁银通卡" onclick="javascript:formsubmit('00011001','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_zfb.gif" width="130" height="52" title="支付宝" onclick="javascript:formsubmit('33000010','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_wx.gif" width="130" height="52" title="微信支付" onclick="javascript:formsubmit('33000020','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_wk.gif" width="130" height="52" title="国际卡" onclick="javascript:formsubmit('00000000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+         <div class="bank3">
+     <div class="bank3_5">
+     <img src="pages/web/images/bank_jtyh.png" width="130" height="52" title="交通银行" onclick="javascript:formsubmit('03010000','1');"  style="cursor:pointer;"/>
+     </div></div>     
+
+</form>
+    </div>
+    
+	 <font color=red style="font-size:16px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+  </div>
+  <!-- div class="nav1">
+    <div class="btn1"></div>
+    <div class="btn3"><a href="#" onclick="formsubmit();"><img src="pages/web/img/btn3.gif" /></a></div>
+  </div-->
+</div> 
+
+<div class="box1">
+  <div class="footer1">
+    <div class="f_desc">
+      <ul>
+        <li>请您选择支付方式。建议使用中国工商银行、中国农业银行、中国银行、中国建设银行、招商银行、中国邮政储蓄银行、交通银行的银行卡，支付请直接点击相应银行的按钮；如果您使用其他银行的银行卡，请点击“中国银联”按钮；如果您使用支付宝或微信账户支付，请点击“支付宝”或“微信支付”按钮；如果您使用国际卡支付，请点击“国际卡”按钮。</li>
+		<li>如果您选择银行卡、卡组织或第三方支付机构账户支付时，请遵守相关银行、卡组织或第三方支付机构的规定进行操作。您在银行、卡组织或第三方支付机构页面上进行的任何操作及其产生的任何法律后果，将按照您与银行、卡组织或第三方支付机构之间签订的合同处理。本网站不承担任何责任。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="box1">
+  <div class="f_ver" style="position: relative;font-size:14px;line-height:30px;padding: 20px 0 20px 0;">
+         版权所有 &copy; 2008-2023 中国铁道科学研究院集团有限公司<br />
+   <img src="pages/web/images/gongan.png" alt="公安" style="width:15px;height:15px;position:relative;top:1px;">
+          <a target="blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802038392" >京公网安备 11010802038392号</a> | 京ICP备05020493号-4 | ICP证：京B2-20202537 
+	<div style="position: absolute;top: 24px;right: 60px;">
+        <img src="pages/web/images/footer-slh.jpg" style="display: block;width: 130px;height: 46px;" alt="适老化无障碍服务">
+      </div>
+      </div>
+</div>
+
+</body>
+</html>
 ```
 
 
@@ -1903,6 +2093,262 @@ X-Ws-Request-Id: 662610cd_qinzhoudianxin72_45806-42116
 # payGateway
 
 选择：支付宝、微信。。。
+
+
+```
+POST https://epay.12306.cn/pay/webBusiness HTTP/1.1
+Host: epay.12306.cn
+Connection: keep-alive
+Content-Length: 2368
+Pragma: no-cache
+Cache-Control: no-cache
+sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Origin: https://epay.12306.cn
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://epay.12306.cn/pay/payGateway
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: guidesStatus=off; highContrastMode=defaltMode; cursorStatus=off; JSESSIONID=Jl8_96BXZHWxHt_fSjJQTuyruMQkMvJURvr2Ie1RLSJ6Cr2diV15!-970077735
+
+tranData=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iR0JLIj8%2BCjxQYXlSZXE%2BPGludGVyZmFjZU5h%0D%0AbWU%2BUEFZX1NFUlZMRVQ8L2ludGVyZmFjZU5hbWU%2BPGludGVyZmFjZVZlcnNpb24%2BMS4wPC9pbnRl%0D%0AcmZhY2VWZXJzaW9uPjxvcmRlckRhdGU%2BMjAyNTAxMDcxNjUyNTk8L29yZGVyRGF0ZT48b3JkZXJU%0D%0AaW1lb3V0RGF0ZT4yMDI1MDEwNzE2NTcyNTwvb3JkZXJUaW1lb3V0RGF0ZT48b3JkZXJJZD4xRUgw%0D%0ANjA4MDg5NTA0MDA3MDYwMDExNjUyNTlZMDc8L29yZGVySWQ%2BPGFtb3VudD4xMDAwMDwvYW1vdW50%0D%0APjxhcHBJZD4wMDAxPC9hcHBJZD48Y3VyVHlwZT4xNTY8L2N1clR5cGU%2BPG9yZGVyUmVtYXJrLz48%0D%0AbWVyVVJMPmh0dHBzOi8va3lmdy4xMjMwNi5jbi9vdG4vYWZ0ZXJOYXRlTm90aWZ5L2VwYXlTdGF0%0D%0AdXM%2FdXNlcl9uYW1lPWFIbG1jM2xoJmFtcDtzZXF1ZW5jZV9ubz1SVWd3TmpBNE1EZzVOVEEwTURB%0D%0AM01EWXcmYW1wO3BheU9yZGVySUQ9TVVWSU1EWXdPREE0T1RVd05EQXdOekEyTURBeE1UWTFNalU1%0D%0AV1RBMyZhbXA7cmVkaXJlY3RVUkw9YUhSMGNITTZMeTlyZVdaM0xqRXlNekEyTG1OdUwyOTBiaTh2%0D%0AYjNKa1pYSXZaVTV2ZEdsbWVVRmpkR2x2Ymk1a2J6OXRaWFJvYjJROQ0KY1hWbGNubE5lVTl5WkdW%0D%0AeVUzUmhkR2xqSm5ObGNYVmxibU5sWDI1dlBVVklNRFl3T0RBNE9UVXdOREF3TnpBMk1BPT0mYW1w%0D%0AO3BheVN0YXJ0PU1RPT0mYW1wO2JhdGNoX25vPU1RPT0mYW1wO2xvZ2luX2lkPVYwVkNYMXBJUTA0%0D%0APSZhbXA7dG91cl9mbGFnPVNFST0mYW1wO3JldHVybl90b3RhbD0mYW1wO3JldHVybl9jb3N0PSZh%0D%0AbXA7b2xkX3RpY2tldF9wcmljZT0mYW1wO3BheV9tb2RlPSZhbXA7Y2hhbm5lbD1SUT09JmFtcDtp%0D%0AZl9mbGFncz1UaU5PSXc9PTwvbWVyVVJMPjxhcHBVUkw%2BaHR0cHM6Ly8xMC4yLjI0MC4yMTI6NDQz%0D%0AL29wbi9hZnRlck5hdGVOb3RpZnkvZXBheU5vdGlmeTwvYXBwVVJMPjxpbm5lclVSTD5odHRwOi8v%0D%0AMTAuMi4yMDEuMTkzOjkwOTkvaG9yZGVyL3Byb2Nlc3NQYXlCYWNrPC9pbm5lclVSTD48bWVyVkFS%0D%0APmFIbG1jM2xoT2xkRlFsOWFTRU5PT2tWSU1EWXdPREE0T1RVd05EQXdOekEyTURveE9qRTZNVGMz%0D%0AS2lvcUtqVXhOalk2T2pvNk9qbzYNCk9raENPa1U2TVRwT09rNDZNMk5OU0VwU1JsRkdPRUZYZEZa%0D%0AdWF6UXdkVFJQUmk5b1JWTlBNR1J0UkVReFMwMDJOVkF5YVVsQlQzTXgNClNteDFka0pqVFd4bVRt%0D%0ASjBkMmREWjFWbFkwdFRlRGhDZEhNNGNUTlJOZ3BDYUVGbVYwMWxkVkp6WWxOQmJXUndhRmN5ZUdo%0D%0AS2IzQjANCmExQXhURGxuUVVNcmFXTTZUZz09PC9tZXJWQVI%2BPHRyYW5zVHlwZT4wMTwvdHJhbnNU%0D%0AeXBlPjxwYXltZW50VHlwZT4xPC9wYXltZW50VHlwZT48UHJlQmFuaz4zMzAwMDAxMDwvUHJlQmFu%0D%0Aaz48L1BheVJlcT4%3D&transType=01&channelId=1&appId=0001&merSignMsg=bFJB%2FWDAvgPh5JV1DYI4da2kJ0iDqJl2X5qHqbgkRWFx8gq3rKsX%2FCKxXdy2rRwiobRiYm8aRLMd%0D%0A%2FhW4gDMh6Hsf5bAZ%2BouRFD4%2BhMLpbsqTvfKMeL3Qj4NIgUFlch1xB8M8Ukc%2FmarSOPu%2F6j2GvglB%0D%0AWXuXUGOFu01aeQeKCf0%3D&merCustomIp=112.65.27.114&orderTimeoutDate=20250107165725&paymentType=1&bankId=33000010&businessType=1
+
+
+
+
+HTTP/1.1 200 OK
+Date: Tue, 07 Jan 2025 08:53:45 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3140
+Connection: keep-alive
+Server: asfep/1.11.2.4
+Set-Cookie: JSESSIONID=Zvw_-FFkaLiZqgXtGKeZE8GF7Kmt-B_O7701wzePPt0NAUI2daj7!1729836003; path=/; HttpOnly
+X-Via: 1.1 PSshwt5wq39:16 (Cdn Cache Server V2.0)
+x-ws-request-id: 677ceb99_PSshwt5fm38_9453-63400
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>中国铁路电子支付平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Cache-Control" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<style type="text/css">
+<!--
+body{ font-family:'宋体',Arial; font-size:12px; color:#333; text-align:center;}
+a,a:link,a:visited {color:#0099FF; text-decoration:underline;}
+.top{ margin:0 auto; width:100%; height:180px;}
+.wait1{ margin:0 auto; width:800px; height:36px;}
+.w1_1{float:left; width:50px; padding-left:300px;}
+.w1_3{float:left; width:150px; padding-top:15px;}
+.w1_8{ margin-top:10px; color:#A8A8A8;}
+-->
+</style>
+</head>
+<body>
+
+<div class="top"></div>
+<div class="wait1">
+  <div class="w1_1"><img src="pages/web/img/loading.gif" /></div>
+  <div class="w1_3">正在转向中，请稍候…</div>
+</div>
+<div class="wait1">
+  <div class="w1_8">如果系统长时间无响应，请<a href="javascript:document.getElementsByName('myform')[0].submit();">单击此处</a>提交本页面</div>
+</div>
+
+
+ <form action="https://mapi.alipay.com/gateway.do" method="post" name="myform">
+
+     <input type="hidden"  name="req_client_ip_ext" value="112.65.27.114">
+
+     <input type="hidden"  name="ord_time_ext" value="2025-01-07 16:53:45">
+
+     <input type="hidden"  name="dispatch_cluster_target" value="mrmapi">
+
+     <input type="hidden"  name="sign_type" value="RSA">
+
+     <input type="hidden"  name="notify_url" value="https://epay.12306.cn/pay/payResponseC2?TRANS_ID=W20250107253939599&bankId=33000010">
+
+     <input type="hidden"  name="ord_pmt_timeout" value="2025-01-07 16:57:25">
+
+     <input type="hidden"  name="return_url" value="https://epay.12306.cn/pay/payResponseC2?TRANS_ID=W20250107253939599&bankId=33000010">
+
+     <input type="hidden"  name="sign" value="iDTXJL4SfjKBvHUtUQ4FAJrxgbgUx/SYX8UrGnwTvr+N1Ye+kOLMYKwxoOKO6a6o1iFdPTkrmoq4W53eIUbC/hiFq2h13CFY9AH2hQjwImti6XdnqxgJKS7POWLuSQBECKtMm+p8Si//5RdIPGwZNAEcIl4faQYMY/OQVdbxdtXdnlah2qbLhvkPXScm+hG8bZ+oNNmwrce10S9yK8caJwl0kBWCYACv5BA4tP9XPOLz1fkS9mLFaa+sW1MZgVdo18pbBI/udWdAycTqlJUFT108pRdgA2CS9kZoWgeKK2H5wUo4R1OUAkBmLmwtI8M7Vpq71OJD/NyeWF29GMK84Q==">
+
+     <input type="hidden"  name="ord_id_ext" value="W20250107253939599">
+
+     <input type="hidden"  name="_input_charset" value="UTF-8">
+
+     <input type="hidden"  name="req_access_type" value="web">
+
+     <input type="hidden"  name="ord_desc" value="">
+
+     <input type="hidden"  name="ord_cur" value="CNY">
+
+     <input type="hidden"  name="service" value="alipay.acquire.mr.ord.createandpay">
+
+     <input type="hidden"  name="ord_amt" value="100.00">
+
+     <input type="hidden"  name="partner" value="2088011519249952">
+
+     <input type="hidden"  name="ord_name" value="">
+
+ </form>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+document.getElementsByName("myform")[0].submit();
+</script>
+
+
+
+
+
+
+
+
+POST https://mapi.alipay.com/gateway.do HTTP/1.1
+Host: mapi.alipay.com
+Connection: keep-alive
+Content-Length: 930
+Pragma: no-cache
+Cache-Control: no-cache
+sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Origin: https://epay.12306.cn
+Content-Type: application/x-www-form-urlencoded
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Dest: document
+Referer: https://epay.12306.cn/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+
+req_client_ip_ext=112.65.27.114&ord_time_ext=2025-01-07+17%3A09%3A37&dispatch_cluster_target=mrmapi&sign_type=RSA&notify_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&ord_pmt_timeout=2025-01-07+17%3A19%3A08&return_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&sign=ghGlKWPHmW8VAEWjNs4myKGCMCejArtlz8GGDmfojtLPUKhTkAFS5%2F7SAP9XSAL8YMxi8eU6R0huVqg%2Fc0tT6bCd14YT7gcHsahY9b4iKIv3zLw8LE71b8MRwdpeTjExgAsbUogUyyTrzTClvQkuf3dnIS3gRSrpyFV1tMyZywi8e1ZKJzlO%2FJcHADp1NLzC%2Fv000OxJQsqgZ4vER%2BdmaVZyPInPB5mH323u2zmC50KqMWSbcFtQ7dcMKVQkjfZMbw4KeOcLzZsNpRoBnJqoLABsn8piZ7nUnkxw3iBtvAgLhE0PIzqgbvS0JSAyj2jIQJqa7Ml3A%2BnTHuSMZQd4cw%3D%3D&ord_id_ext=W20250107253945580&_input_charset=UTF-8&req_access_type=web&ord_desc=&ord_cur=CNY&service=alipay.acquire.mr.ord.createandpay&ord_amt=61.00&partner=2088011519249952&ord_name=
+
+
+
+HTTP/1.1 302 Found
+Server: spanner/1.6.2
+Date: Tue, 07 Jan 2025 09:09:37 GMT
+Content-Length: 0
+Connection: keep-alive
+Set-Cookie: JSESSIONID=BD1BD441E7D3A35381EF75EEF4ACBF65; Path=/; HttpOnly
+Set-Cookie: zone=GZ00F; Domain=.alipay.com; Path=/
+Set-Cookie: JSESSIONID=4550ABA34474869DAB82A99ADC1019DC; Path=/; HttpOnly
+Set-Cookie: ALIPAYJSESSIONID=GZ00hpGuapyfZSejJvhykdiys3saePsuperapiGZ00; Domain=.alipay.com; Path=/
+Set-Cookie: ctoken=o7QP0RNI5txn-oBB; Domain=.alipay.com; Path=/
+Access-Control-Allow-Origin: https://epay.12306.cn
+Vary: Origin
+Access-Control-Allow-Credentials: true
+Location: https://mrmoaprod.alipay.com/exterfaceAssign.htm?dispatch_cluster_target=mrmapi&ord_amt=61.00&_input_charset=UTF-8&sign=ghGlKWPHmW8VAEWjNs4myKGCMCejArtlz8GGDmfojtLPUKhTkAFS5%2F7SAP9XSAL8YMxi8eU6R0huVqg%2Fc0tT6bCd14YT7gcHsahY9b4iKIv3zLw8LE71b8MRwdpeTjExgAsbUogUyyTrzTClvQkuf3dnIS3gRSrpyFV1tMyZywi8e1ZKJzlO%2FJcHADp1NLzC%2Fv000OxJQsqgZ4vER%2BdmaVZyPInPB5mH323u2zmC50KqMWSbcFtQ7dcMKVQkjfZMbw4KeOcLzZsNpRoBnJqoLABsn8piZ7nUnkxw3iBtvAgLhE0PIzqgbvS0JSAyj2jIQJqa7Ml3A%2BnTHuSMZQd4cw%3D%3D&ord_cur=CNY&ord_id_ext=W20250107253945580&ord_time_ext=2025-01-07+17%3A09%3A37&notify_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&ord_pmt_timeout=2025-01-07+17%3A19%3A08&alipay_exterface_invoke_assign_model=acq&alipay_exterface_invoke_assign_target=createAndPayByBuyer.htm&ord_name=&partner=2088011519249952&alipay_exterface_invoke_assign_sign=_f_q3yx8_f_x_vre_x_y_v_i5_l8_vr_k_j0v_f2_v_vg_dy_lrru6_ag_s9tp18k_aok_ks1_c9w%3D%3D&service=alipay.acquire.mr.ord.createandpay&ord_desc=&return_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&req_access_type=web&req_client_ip_ext=112.65.27.114&sign_type=RSA&alipay_exterface_invoke_assign_client_ip=112.65.27.114
+Set-Cookie: zone=GZ00F; Domain=.alipay.com; Path=/
+Set-Cookie: spanner=cUPwCDVRs1/KvRSJ1PIYH6LjW1qvXoPlXt2T4qEYgj0=;path=/;secure;
+Via: spanner-internet-cz20m-13.ea179[302]
+Origin-Agent-Cluster: ?0
+
+
+
+
+
+
+GET https://mrmoaprod.alipay.com/exterfaceAssign.htm?dispatch_cluster_target=mrmapi&ord_amt=61.00&_input_charset=UTF-8&sign=ghGlKWPHmW8VAEWjNs4myKGCMCejArtlz8GGDmfojtLPUKhTkAFS5%2F7SAP9XSAL8YMxi8eU6R0huVqg%2Fc0tT6bCd14YT7gcHsahY9b4iKIv3zLw8LE71b8MRwdpeTjExgAsbUogUyyTrzTClvQkuf3dnIS3gRSrpyFV1tMyZywi8e1ZKJzlO%2FJcHADp1NLzC%2Fv000OxJQsqgZ4vER%2BdmaVZyPInPB5mH323u2zmC50KqMWSbcFtQ7dcMKVQkjfZMbw4KeOcLzZsNpRoBnJqoLABsn8piZ7nUnkxw3iBtvAgLhE0PIzqgbvS0JSAyj2jIQJqa7Ml3A%2BnTHuSMZQd4cw%3D%3D&ord_cur=CNY&ord_id_ext=W20250107253945580&ord_time_ext=2025-01-07+17%3A09%3A37&notify_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&ord_pmt_timeout=2025-01-07+17%3A19%3A08&alipay_exterface_invoke_assign_model=acq&alipay_exterface_invoke_assign_target=createAndPayByBuyer.htm&ord_name=&partner=2088011519249952&alipay_exterface_invoke_assign_sign=_f_q3yx8_f_x_vre_x_y_v_i5_l8_vr_k_j0v_f2_v_vg_dy_lrru6_ag_s9tp18k_aok_ks1_c9w%3D%3D&service=alipay.acquire.mr.ord.createandpay&ord_desc=&return_url=https%3A%2F%2Fepay.12306.cn%2Fpay%2FpayResponseC2%3FTRANS_ID%3DW20250107253945580%26bankId%3D33000010&req_access_type=web&req_client_ip_ext=112.65.27.114&sign_type=RSA&alipay_exterface_invoke_assign_client_ip=112.65.27.114 HTTP/1.1
+Host: mrmoaprod.alipay.com
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Dest: document
+Referer: https://epay.12306.cn/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: mobileSendTime=-1; credibleMobileSendTime=-1; ctuMobileSendTime=-1; riskMobileBankSendTime=-1; riskMobileAccoutSendTime=-1; riskMobileCreditSendTime=-1; riskCredibleMobileSendTime=-1; riskOriginalAccountMobileSendTime=-1; cna=ndkDIMK6NkQCAXBBG3ICbPGj; JSESSIONID=AFA2E8BD2A324AAC6F7290237E6934AA; spanner=TMhHnCchVpZXYygHf8E15pK9P0VaDyOKXt2T4qEYgj0=; rtk=GHYsIIRRvF/XAMNkEHuomBvbLoo29tgw182sCWgMjEcX9QIe0rT; zone=GZ00F; ALIPAYJSESSIONID=GZ00hpGuapyfZSejJvhykdiys3saePsuperapiGZ00; ctoken=o7QP0RNI5txn-oBB
+
+
+
+HTTP/1.1 302 Moved Temporarily
+Server: spanner/1.6.2
+Date: Tue, 07 Jan 2025 09:09:37 GMT
+Content-Type: text/html; charset=GB2312
+Connection: keep-alive
+Set-Cookie: JSESSIONID=C62B579EBDC979573776B43264CF39B3; Path=/; HttpOnly
+Strict-Transport-Security: max-age=31536000
+Set-Cookie: JSESSIONID=GZ00hpGuapyfZSejJvhykdiys3saePsuperapiGZ00; Path=; Secure; HttpOnly
+Location: https://mrexcashier.alipay.com/index.htm?orderId=86b88258fe124604a0303dc212f4c304&bizIdentity=mrpay10001
+Content-Language: zh-CN
+Vary: Accept-Encoding
+Cache-Control: max-age=0,no-cache
+Expires: Thu, 05 Jan 1995 22:00:00 GMT
+Pragma: no-cache
+Set-Cookie: spanner=XRmWn3wZ2vl8SsmdvjzbHLJ7NDf9VVgC4EJoL7C0n0A=;path=/;secure;
+Via: hygonspanner-internet-774.stl[302]
+Origin-Agent-Cluster: ?0
+Content-Length: 0
+
+
+
+
+
+
+GET https://mrexcashier.alipay.com/index.htm?orderId=86b88258fe124604a0303dc212f4c304&bizIdentity=mrpay10001 HTTP/1.1
+Host: mrexcashier.alipay.com
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+sec-ch-ua: "Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Dest: document
+Referer: https://epay.12306.cn/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: zh-CN,zh;q=0.9
+Cookie: spanner=wGvNj+94aPfGyAfroVm6d34JIlDI+y1g; _uab_collina=173624002938911207833699; mobileSendTime=-1; credibleMobileSendTime=-1; ctuMobileSendTime=-1; riskMobileBankSendTime=-1; riskMobileAccoutSendTime=-1; riskMobileCreditSendTime=-1; riskCredibleMobileSendTime=-1; riskOriginalAccountMobileSendTime=-1; cna=ndkDIMK6NkQCAXBBG3ICbPGj; _umdata=G4B17C84F503C0EB1C0D5CFF810FE79CA9C42B0; JSESSIONID=AD2149EAEB9EC6E3E67368E2BDEA644F; rtk=GHYsIIRRvF/XAMNkEHuomBvbLoo29tgw182sCWgMjEcX9QIe0rT; zone=GZ00F; ALIPAYJSESSIONID=GZ00hpGuapyfZSejJvhykdiys3saePsuperapiGZ00; ctoken=o7QP0RNI5txn-oBB
+
+
+
+
+
+
+
+
+pay.index.html
+
+
+```
+
+
 
 
 

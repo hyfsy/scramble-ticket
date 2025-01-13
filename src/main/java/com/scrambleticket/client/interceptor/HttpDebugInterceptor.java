@@ -2,7 +2,6 @@
 package com.scrambleticket.client.interceptor;
 
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 import com.scrambleticket.Logger;
@@ -12,6 +11,7 @@ import com.scrambleticket.client.Interceptors;
 import com.scrambleticket.config.Switch;
 import com.scrambleticket.util.ByteBufUtil;
 
+import io.netty.handler.codec.http.FullHttpMessage;
 import io.netty.handler.codec.http.FullHttpRequest;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.util.internal.StringUtil;
@@ -83,28 +83,29 @@ public class HttpDebugInterceptor extends Interceptors.ForwardingCallbackInterce
             for (Pair pair : messages.values()) {
                 FullHttpRequest request = pair.request;
                 FullHttpResponse response = pair.response;
-                if (request == null) {
-                    sb.append("null").append(StringUtil.NEWLINE);
-                } else {
-                    ByteBufUtil.reuse(request.content());
-                    int len = request.content().readableBytes();
-                    sb.append(request).append(StringUtil.NEWLINE).append(StringUtil.NEWLINE)
-                        .append(len > 1000 ? "MESSAGE TOO BIG, IT MAY VALID" : ByteBufUtil.toString(request.content()))
-                        .append(StringUtil.NEWLINE);
-                }
+                buildMessage(sb, request);
                 sb.append(StringUtil.NEWLINE);
-                if (response == null) {
-                    sb.append("null").append(StringUtil.NEWLINE);
-                } else {
-                    ByteBufUtil.reuse(response.content());
-                    int len = response.content().readableBytes();
-                    sb.append(response).append(StringUtil.NEWLINE).append(StringUtil.NEWLINE)
-                        .append(len > 1000 ? "MESSAGE TOO BIG, IT MAY VALID" : ByteBufUtil.toString(response.content()))
-                        .append(StringUtil.NEWLINE);
-                }
+                buildMessage(sb, response);
                 sb.append("======================================").append(StringUtil.NEWLINE);
             }
             Logger.info(sb.toString());
+        }
+
+        private void buildMessage(StringBuilder sb, FullHttpMessage message) {
+            if (message == null) {
+                sb.append("null").append(StringUtil.NEWLINE);
+            } else {
+                ByteBufUtil.reuse(message.content());
+                int len = message.content().readableBytes();
+                sb.append(message).append(StringUtil.NEWLINE).append(StringUtil.NEWLINE);
+                if (len < 1000 || Switch.log_req_resp_verbose) {
+                    sb.append(ByteBufUtil.toString(message.content()));
+                }
+                else {
+                    sb.append("MESSAGE CONTENT TOO BIG, IGNORE...");
+                }
+                sb.append(StringUtil.NEWLINE);
+            }
         }
 
         public void release() {
@@ -116,7 +117,7 @@ public class HttpDebugInterceptor extends Interceptors.ForwardingCallbackInterce
                     pair.response.release();
                 }
             }
-            messages = new ConcurrentHashMap<>();
+            messages = new ConcurrentSkipListMap<>();
         }
 
         static class Pair {
